@@ -1,0 +1,91 @@
+:root{
+    /* defalt */
+    --color_dark: rgb(11, 12, 17);
+    --color_light: rgb(170, 170, 170);
+    /* navbar */
+    --navbar-width: 250px;
+    --navbar-heigth: 100vh;
+    --navbar-magin-top: 10px;
+    --navbar-color-rigth: rgb(110, 110, 110);
+    /* nav-link */
+    --nav-link-padding-top-down: 25px;
+    --nav-link-padding-left-rigth: 0;
+    --nav-link-border-color: var(--color_light);
+    --nav-link-text-color: var(var(--color_light));
+    /*main-doc*/
+    --main-doc-width: calc(100vw 10 - var(--navbar-width));
+    --main-doc-padding-left: calc(var(--navbar-width) + 20px );
+    --main-doc-padding-top: 20px;
+}   
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color_light);
+    background-color: var(--color_dark);
+}
+/* nav */
+.navbar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: var(--navbar-width);
+    height: var(--navbar-heigth);
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--navbar-magin-top);
+    background-color: var(--color_dark);
+    border-right: solid var(--navbar-color-rigth) 5px;
+    
+}
+.navbar > header{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+.navbar >ul{
+    padding-left: 0;
+    border-bottom: solid var(--color_light) 1px;
+    border-top: solid var(--color_light) 1px;
+    margin: 0;
+    overflow-y: scroll;
+}
+.navbar > ul > li{
+    list-style-type: none;
+}
+.nav-link{
+    display: flex;
+    padding: var(--nav-link-padding-top-down) var(--nav-link-padding-left-rigth);
+    padding-left: 10px;
+    border-bottom: solid var(--nav-link-border-color) 1px;
+    text-decoration: none;
+    color: var(--nav-link-text-color);
+}
+
+/* main-doc */
+.main-doc{
+    width: var(--main-doc-width);
+    padding-left: var(--main-doc-padding-left);
+    padding-top: var(--main-doc-padding-top);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.main-section > header{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media(max-width:800px){
+    :root{
+        /* navbar */
+        --navbar-width: 100vw;
+        --navbar-heigth: 30vh;
+        /*main-doc*/
+        --main-doc-width: auto;
+        --main-doc-padding-left: 20px;
+        --main-doc-padding-top: calc(var(--navbar-heigth) + 20px);
+    }
+    .navbar{
+        border-right: none;
+    }
+    
+}
